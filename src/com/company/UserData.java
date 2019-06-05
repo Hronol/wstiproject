@@ -1,16 +1,14 @@
 package com.company;
 
-public class userData{
-    private String imie, nazwisko, nazwaCzesci;
+public class UserData {
+    private String imie, nazwisko;
     private int rocznik, nip;
     private static int idKlienta = 0;
     private static int idJob = 0;
 
-    public userData() {
+    public UserData() {
         imie = " ";
         nazwisko = " ";
-        nazwaCzesci = " ";
-        rocznik = 0;
         nip = 0;
         idJob = ++idKlienta;
     }
@@ -29,22 +27,6 @@ public class userData{
 
     public void setNazwisko(String nazwisko) {
         this.nazwisko = nazwisko;
-    }
-
-    public String getNazwaCzesci() {
-        return nazwaCzesci;
-    }
-
-    public void setNazwaCzesci(String nazwaCzesci) {
-        this.nazwaCzesci = nazwaCzesci;
-    }
-
-    public int getRocznik() {
-        return rocznik;
-    }
-
-    public void setRocznik(int rocznik) {
-        this.rocznik = rocznik;
     }
 
     public int getIdKlienta() {

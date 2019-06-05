@@ -1,13 +1,13 @@
 package com.company;
 
-public class userService extends userData{
+public class UserService extends UserData {
 
         private String nazwaUslugi, nazwaCzesci;
         private int liczenie;
         private double kwota1, kwota2;
         private int idUsera;
 
-        public userService(){
+        public UserService(){
                 idUsera = getIdKlienta();
                 nazwaCzesci = " ";
                 nazwaUslugi = " ";
@@ -25,12 +25,10 @@ public class userService extends userData{
                 this.nazwaUslugi = nazwaUslugi;
         }
 
-        @Override
         public String getNazwaCzesci() {
                 return nazwaCzesci;
         }
 
-        @Override
         public void setNazwaCzesci(String nazwaCzesci) {
                 this.nazwaCzesci = nazwaCzesci;
         }
