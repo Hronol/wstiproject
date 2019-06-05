@@ -6,7 +6,7 @@ public class AddUser {
 
     private Scanner wpisz;
     private String wpiszString;
-    public  UserData newUser = new UserData();
+
 
     public AddUser() {
         wpisz = new Scanner(System.in);
