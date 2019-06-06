@@ -2,11 +2,11 @@ package com.company;
 
 import java.util.Scanner;
 
-public class AddUser {
+public class AddUser extends UserService{
 
     private Scanner wpisz;
     private String wpiszString;
-
+    private int i;
 
     public AddUser() {
         wpisz = new Scanner(System.in);
@@ -14,16 +14,19 @@ public class AddUser {
 
     public void dodajDaneGlowne(){
 
-        newUser.setImie(wpisz.nextLine());
-        newUser.setNazwisko(wpisz.nextLine());
-        newUser.setNip(wpisz.nextInt());
+        i++;
+        setImie(wpisz.nextLine());
+        setNazwisko(wpisz.nextLine());
+        setNip(wpisz.nextInt());
     }
 
     public void wyswietlDaneGlowne(){
+    }
 
-        System.out.println(newUser.getImie());
-        System.out.println(newUser.getNazwisko());
-        System.out.println(newUser.getNip());
+    public void dodajDaneDodatkowe(){
 
     }
+
+
+
 }

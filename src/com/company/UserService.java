@@ -2,67 +2,67 @@ package com.company;
 
 public class UserService extends UserData {
 
-        private String nazwaUslugi, nazwaCzesci;
-        private int liczenie;
-        private double kwota1, kwota2;
-        private int idUsera;
+    private String nazwaUslugi, nazwaCzesci;
+    private int liczenie;
+    private double kwota1, kwota2;
+    private int idUsera;
 
-        public UserService(){
-                idUsera = getIdKlienta();
-                nazwaCzesci = " ";
-                nazwaUslugi = " ";
-                liczenie = 0;
-                kwota1 = 0.0;
-                kwota2 = 0.0;
-        }
+    public UserService(){
+        idUsera = getIdKlienta();
+        nazwaCzesci = " ";
+        nazwaUslugi = " ";
+        liczenie = 0;
+        kwota1 = 0.0;
+        kwota2 = 0.0;
+    }
 
 
-        public String getNazwaUslugi() {
-                return nazwaUslugi;
-        }
+    public String getNazwaUslugi() {
+        return nazwaUslugi;
+    }
 
-        public void setNazwaUslugi(String nazwaUslugi) {
-                this.nazwaUslugi = nazwaUslugi;
-        }
+    public void setNazwaUslugi(String nazwaUslugi) {
+        this.nazwaUslugi = nazwaUslugi;
+    }
 
-        public String getNazwaCzesci() {
-                return nazwaCzesci;
-        }
+    public String getNazwaCzesci() {
+        return nazwaCzesci;
+    }
 
-        public void setNazwaCzesci(String nazwaCzesci) {
-                this.nazwaCzesci = nazwaCzesci;
-        }
+    public void setNazwaCzesci(String nazwaCzesci) {
+        this.nazwaCzesci = nazwaCzesci;
+    }
 
-        public int getLiczenie() {
-                return liczenie;
-        }
+    public int getLiczenie() {
+        return liczenie;
+    }
 
-        public void setLiczenie(int liczenie) {
-                this.liczenie = liczenie;
-        }
+    public void setLiczenie(int liczenie) {
+        this.liczenie = liczenie;
+    }
 
-        public double getKwota1() {
-                return kwota1;
-        }
+    public double getKwota1() {
+        return kwota1;
+    }
 
-        public void setKwota1(double kwota1) {
-                this.kwota1 = kwota1;
-        }
+    public void setKwota1(double kwota1) {
+        this.kwota1 = kwota1;
+    }
 
-        public double getKwota2() {
-                return kwota2;
-        }
+    public double getKwota2() {
+        return kwota2;
+    }
 
-        public void setKwota2(double kwota2) {
-                this.kwota2 = kwota2;
-        }
+    public void setKwota2(double kwota2) {
+        this.kwota2 = kwota2;
+    }
 
-        public int getIdUsera() {
-                return idUsera;
-        }
+    public int getIdUsera() {
+        return idUsera;
+    }
 
-        public void setIdUsera(int idUsera) {
-                this.idUsera = idUsera;
-        }
+    public void setIdUsera(int idUsera) {
+        this.idUsera = idUsera;
+    }
 
 }
