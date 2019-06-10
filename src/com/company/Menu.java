@@ -6,7 +6,7 @@ public class Menu {
     public static void main(String[] args) {
 
         Scanner wpisz = new Scanner(System.in);
-        char pick;
+        String pick = wpisz.nextLine();
 
         do {
             switch (pick) {
