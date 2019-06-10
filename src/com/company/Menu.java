@@ -20,6 +20,6 @@ public class Menu {
                     System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
                     break;
             }
-        }while (pick!='q')
+        }while (pick!='q');
     }
 }
