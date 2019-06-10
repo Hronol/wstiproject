@@ -3,9 +3,9 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddUserObject {
+public class AddUserObject extends AddUser{
 
-    private List<AddUser> addUsers = new ArrayList<AddUser>();
+    private static List<AddUser> addUsers = new ArrayList<AddUser>();
 
     public void dodajDoListy(){
 
@@ -18,7 +18,9 @@ public class AddUserObject {
 
         AddUserObject test = new AddUserObject();
         test.dodajDoListy();
-        System.out.println(test.);
-        for(AddUser i : )
+
+        for (int i=0; i<addUsers.size(); i++){
+            System.out.println(addUsers.get(i).getImie());
+        }
     }
 }
