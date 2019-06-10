@@ -8,8 +8,8 @@ public class Menu {
         Scanner wpisz = new Scanner(System.in);
         char pick;
 
-        switch (pick) {
-            do {
+        do {
+            switch (pick) {
                 case 1:
                     AddUserObject.main(null);
                     break;
@@ -19,7 +19,7 @@ public class Menu {
                 default:
                     System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
                     break;
-            }while (pick!='q')
-        }
+            }
+        }while (pick!='q')
     }
 }

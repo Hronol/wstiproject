@@ -3,7 +3,7 @@ package com.company;
 public class Application {
     public static void main(String[] args) {
 
-        AddUserObject.main(null);
+        Menu.main(null);
 
     }
 }
