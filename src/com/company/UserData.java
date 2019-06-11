@@ -2,7 +2,7 @@ package com.company;
 
 public class UserData {
     private String imie, nazwisko;
-    private int rocznik, nip;
+    private int nip;
     private static int idKlienta = 0;
     private static int idJob = 0;
 

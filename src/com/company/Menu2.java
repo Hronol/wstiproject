@@ -2,17 +2,18 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Menu {
-        static void menuStart() {
+public class Menu2 {
+    static void menuStart() {
 
-            boolean flag = false;
+        boolean flag = false;
         Scanner wpisz = new Scanner(System.in);
         String pick, koniec;
 
-        String menu = "1. Zarządzaj klientami"
-                +"\n2. Historia transakcji"
-                +"\n3. Zapisz/wczytaj"
-                +"\n4. Zakończ program"
+        String menu = "1. Dodaj"
+                +"\n2. Edytuj"
+                +"\n3. Usuń"
+                +"\n4. Przegladaj"
+                +"\n5. Wróć"
                 +"\n\nWybierz operacje:";
 
         do {
@@ -24,7 +25,7 @@ public class Menu {
             else {
                 switch (pick) {
                     case "1":
-                        Menu2.menuStart();
+
                         break;
                     case "2":
 
@@ -32,14 +33,12 @@ public class Menu {
                     case "3":
 
                         break;
-                    case "4":{
-                        System.out.println("Czy na pewno chcesz wyjść z programu? t/n");
-                        koniec = wpisz.nextLine();
-                        if (koniec == "t") {
-                            System.exit(0);
-                        } else
-                            flag=false;
-                            break;}
+                    case "4":
+
+                        break;
+                    case "5":
+                        flag=true;
+                        break;
                     default:
                         System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
                         break;
@@ -48,3 +47,4 @@ public class Menu {
         }while (!flag);
     }
 }
+
