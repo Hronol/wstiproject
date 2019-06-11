@@ -9,14 +9,13 @@ public class UserFactory extends UserService{
     private Scanner wpisz;
     private String wpiszString;
     private int i;
-    private List<UserFactory> addUsers;
+    private List<UserData> nowyUser;
 
-    public UserFactory() {
+    UserFactory() {
         wpisz = new Scanner(System.in);
     }
 
-    public void dodajDaneGlowne(){
-
+    private void dodajDaneGlowne(){
         i++;
         setImie(wpisz.nextLine());
         setNazwisko(wpisz.nextLine());
@@ -26,21 +25,22 @@ public class UserFactory extends UserService{
     public void wyswietlDaneGlowne(){
     }
 
-    public void dodajDaneDodatkowe(){
-
+    private void dodajDaneDodatkowe(){
+        setNazwaCzesci(wpisz.nextLine());
+        setNazwaUslugi(wpisz.nextLine());
+        setKwota1(wpisz.nextDouble());
     }
 
     public void createUser(){
         UserData userdata = new UserData();
         dodajDaneGlowne();
-        //addUsers.add();
+        dodajDaneDodatkowe();
+        nowyUser.add(userdata);
+
     }
 
     public void dodajDoListy(){
 
-        UserFactory nowyUser = new UserFactory();
-        nowyUser.dodajDaneGlowne();
-        addUsers.add(nowyUser);
     }
 
 
