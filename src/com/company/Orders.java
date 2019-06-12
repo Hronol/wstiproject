@@ -1,13 +1,13 @@
 package com.company;
 
-public class UserService extends UserData {
+public class Orders extends UserData {
 
     private String nazwaUslugi, nazwaCzesci;
     private int liczenie;
     private double kwota1, kwota2;
     private int idUsera;
 
-    public UserService(){
+    public Orders(){
         idUsera = getIdKlienta();
         nazwaCzesci = " ";
         nazwaUslugi = " ";
