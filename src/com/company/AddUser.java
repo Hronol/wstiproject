@@ -1,18 +1,27 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AddUser {
 
-    private UserRepository repository;
+    public List<UserData> lista{
+      lista = new ArrayList<UserData>;
+    };
 
-    public AddUser(UserRepository repository){
-        this.repository = repository;
+    public void addUser(UserData userData) {
+        UserData userek;
+        userek.createUser();
+        lista.add(userek);
     }
 
-    public UserData create(UserData userData){
-        var userToSave = UserData.builder()
-                .imie(userData.getImie())
-                .nazwisko(userData.getNazwisko())
-                .nip(userData.getNip())
-                return repository.create(userToSave);
+    public void displayUSser(ArrayList<UserData> lista) {
+        for (int i = 0; i < lista.size(); i++) {
+            UserData userData = lista.get();
+
+           // System.out.println(userData.getImie() + " " + userData.getNazwisko() + " "
+           //         + userData.getNip());
+        }
+
     }
 }

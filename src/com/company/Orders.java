@@ -7,15 +7,6 @@ public class Orders extends UserData {
     private double kwota1, kwota2;
     private int idUsera;
 
-    public Orders(){
-        idUsera = getIdKlienta();
-        nazwaCzesci = " ";
-        nazwaUslugi = " ";
-        liczenie = 0;
-        kwota1 = 0.0;
-        kwota2 = 0.0;
-    }
-
 
     public String getNazwaUslugi() {
         return nazwaUslugi;
