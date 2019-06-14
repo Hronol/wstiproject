@@ -7,7 +7,7 @@ public class Menu {
     public boolean flag = false;
     public Scanner wpisz = new Scanner(System.in);
     public String pick, koniec;
-    AddUser user = new AddUser();
+    UserRepository user = new UserRepository();
 
         public void menuStart() {
 

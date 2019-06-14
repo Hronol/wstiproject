@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27ac5604-f68d-41ab-80bc-b15abcef7908" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/UserRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/AddUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/AddUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/AddUser.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Menu2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/UserRepository.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/UserData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="51">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding>
                 <element signature="e#643#644#0" expanded="true" />
                 <element signature="e#675#676#0" expanded="true" />
@@ -54,10 +53,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/AddUser.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="544">
+              <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#149#159#0" expanded="true" />
@@ -71,8 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+            <state relative-caret-position="255">
+              <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -111,12 +110,12 @@
         <option value="$PROJECT_DIR$/src/com/company/UserService.java" />
         <option value="$PROJECT_DIR$/src/com/company/UserData2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Orders.java" />
-        <option value="$PROJECT_DIR$/src/com/company/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/com/company/Menu2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Application.java" />
         <option value="$PROJECT_DIR$/src/com/company/AddUser.java" />
         <option value="$PROJECT_DIR$/src/com/company/UserData.java" />
         <option value="$PROJECT_DIR$/src/com/company/Menu.java" />
+        <option value="$PROJECT_DIR$/src/com/company/UserRepository.java" />
       </list>
     </option>
   </component>
@@ -196,7 +195,7 @@
       <module name="ProjektWSTI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.UserRepository" />
+          <option name="PATTERN" value="com.company.UserRepo" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -209,7 +208,7 @@
       <module name="ProjektWSTI" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.company.UserRepository" />
+          <option name="PATTERN" value="com.company.UserRepo" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -326,7 +325,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560456047829</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="poprawiona dzialajaca lista z dodawaniem obiektow">
+      <created>1560532183834</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1560532183834</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -342,14 +348,14 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992658" visible="true" weight="0.13825503" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992658" visible="true" weight="0.13825503" />
       <window_info id="Structure" order="1" sideWeight="0.5007342" side_tool="true" weight="0.25797504" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.5007342" side_tool="true" weight="0.2590604" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4889868" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4889868" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39941263" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -439,7 +445,8 @@
     <MESSAGE value="shit changes" />
     <MESSAGE value="adding new stuff" />
     <MESSAGE value="jak stworzyc obiekt new list i potem do niego dodawac kolejne obiekty UserData?" />
-    <option name="LAST_COMMIT_MESSAGE" value="jak stworzyc obiekt new list i potem do niego dodawac kolejne obiekty UserData?" />
+    <MESSAGE value="poprawiona dzialajaca lista z dodawaniem obiektow" />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawiona dzialajaca lista z dodawaniem obiektow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -463,7 +470,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/AddUserObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/UserRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/UserRepo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
@@ -490,17 +497,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Orders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/UserData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding>
             <element signature="e#643#644#0" expanded="true" />
             <element signature="e#675#676#0" expanded="true" />
@@ -512,10 +512,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AddUser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="544">
+          <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#149#159#0" expanded="true" />
@@ -525,10 +525,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Orders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+        <state relative-caret-position="255">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
         </state>
       </provider>
     </entry>
