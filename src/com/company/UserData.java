@@ -14,6 +14,9 @@ public class UserData {
     }
 
     public UserData(){
+        this.imie = "";
+        this.nazwisko = "";
+        this.nip = 0;
     }
 
     public String getImie(){
@@ -28,8 +31,15 @@ public class UserData {
         return nip;
     }
 
-    public void createUser(UserData user){
-        return new UserData();
+    public void setImie(String imie) {
+        this.imie = imie;
     }
 
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
+    public void setNip(int nip) {
+        this.nip = nip;
+    }
 }
