@@ -1,5 +1,7 @@
 package com.company;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -8,6 +10,7 @@ public class Menu {
     public Scanner wpisz = new Scanner(System.in);
     public String pick, koniec;
     UserRepository user = new UserRepository();
+    FileOperations plik = new FileOperations();
 
     public void wyswietlaj() {
         for (int i = 0; i < user.lista.size(); i++)
@@ -36,7 +39,7 @@ public class Menu {
 
                         break;
                     case "3":
-
+                        zapiszWczytaj();
                         break;
                     case "4": {
                         System.out.println("Czy na pewno chcesz wyjść z programu? t/n");
@@ -95,6 +98,43 @@ public class Menu {
             }
         } while (!flag);
 
+    }
+
+    public void zapiszWczytaj() {
+
+
+        String menu = "1. Zapisz zmiany do pliku"
+                + "\n2. Wczytaj z pliku"
+                + "\n3. Dodaj pusty plik"
+                + "\n4. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        plik.zapiszDoPliku(user.lista);
+                        break;
+                    case "2":
+                        plik.wczytajZPliku(user.lista);
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+                        menuStart();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+
+                }
+            }
+        } while (!flag);
     }
 
 

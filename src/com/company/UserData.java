@@ -1,7 +1,9 @@
 package com.company;
 
 
-public class UserData {
+import java.io.Serializable;
+
+public class UserData implements Serializable {
     private String imie, nazwisko;
     private int nip;
     private static int idKlienta = 0;

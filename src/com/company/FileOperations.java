@@ -1,12 +1,12 @@
 package com.company;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FileOperations {
 
@@ -19,12 +19,53 @@ public class FileOperations {
         }
     }
 
-    public static void saveToFile(String filename, ArrayList list){
+    public void saveToFile(String filename, ArrayList list){
         Path filePath = Paths.get(filename);
+
         try{
             Files.write(filePath, list, Charset.defaultCharset());
         }catch(IOException e){
             e.printStackTrace();
         }
+    }
+
+    public void zapiszDoPliku(List<UserData> list){
+        try
+        {
+            FileOutputStream fos = new FileOutputStream("UserData");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(list);
+            oos.close();
+            fos.close();
+        }
+        catch (IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
+    }
+
+    public void wczytajZPliku(List<UserData> list){
+        try
+        {
+            FileInputStream fis = new FileInputStream("UserData");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            list = (ArrayList) ois.readObject();
+
+            ois.close();
+            fis.close();
+        }
+        catch (IOException ioe)
+        {
+            ioe.printStackTrace();
+            return;
+        }
+        catch (ClassNotFoundException c)
+        {
+            System.out.println("Nie znaleziono klasy");
+            c.printStackTrace();
+            return;
+        }
+        
     }
 }

@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.*;
 
+
 public class UserRepository {
 
     public List<UserData> lista = new ArrayList<UserData>();
@@ -22,6 +23,7 @@ public class UserRepository {
     }
 
     public void wpiszUsera(){
+        wpisz = new Scanner(System.in);
         UserData tmp = new UserData();
         System.out.print("Podaj imie:\t");
         tmp.setImie(wpisz.nextLine());
