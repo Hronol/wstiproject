@@ -34,7 +34,7 @@ public class UserRepository {
     }
 
     public void sortuj(){
-        Collections.sort(lista);
+        //Collections.sort(lista);
     }
 
     public String displayUser(int element) {
