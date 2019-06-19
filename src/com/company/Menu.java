@@ -11,6 +11,7 @@ public class Menu {
     public String pick, koniec;
     UserRepository user = new UserRepository();
     FileOperations plik = new FileOperations();
+    Sorting sort = new Sorting();
 
     public void wyswietlaj() {
         for (int i = 0; i < user.lista.size(); i++)
@@ -86,6 +87,7 @@ public class Menu {
                         break;
                     case "4":
                         wyswietlaj();
+                        sortujListe();
                         break;
                     case "5":
                         menuStart();
@@ -120,6 +122,7 @@ public class Menu {
                         plik.zapiszDoPliku(user.lista);
                         break;
                     case "2":
+                        plik.wielkosclisty(user.lista);
                         plik.wczytajZPliku(user.lista);
                         break;
                     case "3":
@@ -157,7 +160,7 @@ public class Menu {
             else {
                 switch (pick) {
                     case "1":
-                        user.sortuj();
+                        sort.sortujImie(user.lista);
                         wyswietlaj();
                         break;
                     case "2":
@@ -167,7 +170,7 @@ public class Menu {
 
                         break;
                     case "4":
-                        menuStart();
+                        zarzadzajKlientami();
                         break;
                     default:
                         System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");

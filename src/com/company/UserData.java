@@ -3,7 +3,7 @@ package com.company;
 
 import java.io.Serializable;
 
-public class UserData implements Serializable {
+public class UserData implements Serializable, Comparable<UserData> {
     private String imie, nazwisko;
     private int nip;
     private static int idKlienta = 0;
@@ -43,5 +43,10 @@ public class UserData implements Serializable {
 
     public void setNip(int nip) {
         this.nip = nip;
+    }
+
+    @Override
+    public int compareTo(UserData o) {
+        return this.getImie().compareTo(o.getImie());
     }
 }

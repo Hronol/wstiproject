@@ -19,7 +19,12 @@ public class UserRepository {
     }
 
     public void usunUsera(){
-        lista.remove(0);
+        if(lista.size() > 0) {
+            lista.remove(0);
+        }
+        else{
+            System.out.println("Lista pusta");
+        }
     }
 
     public void wpiszUsera(){
@@ -33,10 +38,6 @@ public class UserRepository {
         tmp.setNip(wpisz.nextInt());
         addUser(tmp);
 
-    }
-
-    public void sortuj(){
-        //Collections.sort(lista);
     }
 
     public String displayUser(int element) {

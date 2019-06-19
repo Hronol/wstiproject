@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.*;
+import java.lang.reflect.Array;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -50,7 +51,7 @@ public class FileOperations {
             FileInputStream fis = new FileInputStream("UserData");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            list = (ArrayList) ois.readObject();
+            list = (ArrayList<UserData>) ois.readObject();
 
             ois.close();
             fis.close();
@@ -67,5 +68,8 @@ public class FileOperations {
             return;
         }
         
+    }
+    public void wielkosclisty(List<UserData> list){
+        System.out.println("Wielkosc listy : "+list.size());
     }
 }
