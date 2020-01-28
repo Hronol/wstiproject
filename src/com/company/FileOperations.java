@@ -51,7 +51,7 @@ public class FileOperations {
             FileInputStream fis = new FileInputStream("UserData");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            list = (ArrayList<UserData>) ois.readObject();
+            list = (ArrayList<UserData>)ois.readObject();
 
             ois.close();
             fis.close();
