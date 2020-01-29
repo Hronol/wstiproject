@@ -1,7 +1,5 @@
 package com.company;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -15,7 +13,7 @@ public class Menu {
 
     public void wyswietlaj() {
         for (int i = 0; i < user.lista.size(); i++)
-            System.out.println(user.displayUser(i));
+            System.out.println(user.displayAllUsers(i));
     }
 
     public void menuStart() {
@@ -65,8 +63,9 @@ public class Menu {
         String menu = "1. Dodaj"
                 + "\n2. Edytuj"
                 + "\n3. Usuń"
-                + "\n4. Przegladaj"
-                + "\n5. Wróć"
+                + "\n4. Przegladaj wszystkich"
+                + "\n5. Przeglądaj pojedynczo"
+                + "\n6. Wróć"
                 + "\n\nWybierz operacje:";
 
         do {
@@ -90,19 +89,21 @@ public class Menu {
                         sortujListe();
                         break;
                     case "5":
+
+                        break;
+                    case "6":
                         menuStart();
                         break;
                     default:
                         System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
                         break;
-
                 }
             }
         } while (!flag);
 
     }
 
-    public void zapiszWczytaj() {
+    public void zapiszWczytaj(){
 
 
         String menu = "1. Zapisz zmiany do pliku"
@@ -122,11 +123,11 @@ public class Menu {
                         plik.zapiszDoPliku(user.lista);
                         break;
                     case "2":
-                        plik.wielkosclisty(user.lista);
                         plik.wczytajZPliku(user.lista);
+                        plik.wielkosclisty(user.lista);
                         break;
                     case "3":
-
+                        plik.tworzPlik();
                         break;
                     case "4":
                         menuStart();
@@ -145,10 +146,13 @@ public class Menu {
     public void sortujListe() {
 
 
-        String menu = "1. Sortuj po imieniu"
-                +"\n2. Sortuj po nazwisku"
-                +"\n3. Sortuj po nipie"
-                +"\n4. Wróć"
+        String menu = "1. Sortuj po imieniu ASC"
+                +"\n2. Sortuj po imieniu DSC"
+                +"\n3. Sortuj po nazwisku ASC"
+                +"\n4. Sortuj po nazwisku DSC"
+                +"\n5. Sortuj po nipie ASC"
+                +"\n6. Sortuj po nipie DSC"
+                +"\n7. Wróć"
                 +"\n\nWybierz operacje:";
 
         do {
@@ -160,16 +164,26 @@ public class Menu {
             else {
                 switch (pick) {
                     case "1":
-                        sort.sortujImie(user.lista);
+                        sort.sortujeImieAsc(user.lista);
                         wyswietlaj();
                         break;
                     case "2":
-
+                        sort.sortujeImieDsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "3":
 
                         break;
                     case "4":
+
+                        break;
+                    case "5":
+
+                        break;
+                    case "6":
+
+                        break;
+                    case "7":
                         zarzadzajKlientami();
                         break;
                     default:

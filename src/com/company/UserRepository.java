@@ -50,7 +50,7 @@ public class UserRepository {
         }
     }
 
-    public String displayUser(int element) {
+    public String displayAllUsers(int element) {
         String tmp = "";
 
         if (element < 0 || element > lista.size()-1)
@@ -64,7 +64,18 @@ public class UserRepository {
             tmp+= "Nazwisko\t"+lista.get(element).getNazwisko()+"\n";
             tmp+= "Nip\t\t\t"+lista.get(element).getNip()+"\n";
         }
-
         return tmp;
     }
+
+    public String displayOneUser(int element){
+        String tmp = "";
+
+        tmp+= "Klient nr: "+(element+1)+"\n";
+        tmp+= "Imie\t\t"+lista.get(element).getImie()+"\n";
+        tmp+= "Nazwisko\t"+lista.get(element).getNazwisko()+"\n";
+        tmp+= "Nip\t\t\t"+lista.get(element).getNip()+"\n";
+        return tmp;
+
+    }
+
 }

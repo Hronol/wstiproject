@@ -5,7 +5,15 @@ import java.util.List;
 
 public class Sorting {
 
-    public void sortujImie(List<UserData> list){
+    public void sortujeImieAsc(List<UserData> list){
         Collections.sort(list);
     }
+
+    public void sortujeImieDsc(List<UserData> list){
+        Collections.sort(list);
+        Collections.reverse(list);
+    }
+
+
+
 }
