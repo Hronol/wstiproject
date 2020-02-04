@@ -7,6 +7,7 @@ public class Menu {
     public boolean flag = false;
     public Scanner wpisz = new Scanner(System.in);
     public String pick, koniec;
+    public int i=0;
     UserRepository user = new UserRepository();
     FileOperations plik = new FileOperations();
     Sorting sort = new Sorting();
@@ -61,11 +62,9 @@ public class Menu {
 
 
         String menu = "1. Dodaj"
-                + "\n2. Edytuj"
-                + "\n3. Usuń"
-                + "\n4. Przegladaj wszystkich"
-                + "\n5. Przeglądaj pojedynczo"
-                + "\n6. Wróć"
+                + "\n2. Przeglądaj/edytuj pojedynczo"
+                + "\n3. Przegladaj wszystkich"
+                + "\n4. Wróć"
                 + "\n\nWybierz operacje:";
 
         do {
@@ -79,19 +78,13 @@ public class Menu {
                         user.wpiszUsera();
                         break;
                     case "2":
-
+                        pojedynczoKlienci();
                         break;
                     case "3":
-                        user.usunUsera();
-                        break;
-                    case "4":
                         wyswietlaj();
                         sortujListe();
                         break;
-                    case "5":
-
-                        break;
-                    case "6":
+                    case "4":
                         menuStart();
                         break;
                     default:
@@ -103,8 +96,56 @@ public class Menu {
 
     }
 
-    public void zapiszWczytaj(){
+    public void pojedynczoKlienci() {
 
+
+        String menu = "1. 1 do przodu"
+                + "\n2. 1 do tyłu"
+                + "\n3. Edytuj"
+                + "\n4. Usuń"
+                + "\n5. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        i++;
+                        if (i >= user.lista.size()){
+                        System.out.println("Poza zakresem bazy");
+                    } else
+                        user.displayOneUser(i);
+                        break;
+                    case "2":
+                        i--;
+                        if (i < 0){
+                            System.out.println("Poza zakresem bazy");
+                        } else
+                            user.displayOneUser(i);
+                        break;
+                    case "3":
+
+                        break;
+                    case "4":
+
+                        break;
+                    case "5":
+                        zarzadzajKlientami();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+                }
+            }
+        } while (!flag);
+
+    }
+
+    public void zapiszWczytaj(){
 
         String menu = "1. Zapisz zmiany do pliku"
                 + "\n2. Wczytaj z pliku"
@@ -124,7 +165,6 @@ public class Menu {
                         break;
                     case "2":
                         plik.wczytajZPliku(user.lista);
-                        plik.wielkosclisty(user.lista);
                         break;
                     case "3":
                         plik.tworzPlik();

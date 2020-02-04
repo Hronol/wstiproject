@@ -117,13 +117,14 @@ public class FileOperations implements Serializable{
                     tmp.setNazwisko(sd.readUTF());
                     tmp.setNip(sd.readInt());
                     lista.add(tmp);
-
                 }
                 catch (IOException e)
                 {
                     blad += ("Błąd wczytania "+ (i+1) +"wyjatek "+ e +"\n");
                 }
             }
+            System.out.println("Poprawnie wczytano bazę danych");
+
             try
             {
                 sd.close();

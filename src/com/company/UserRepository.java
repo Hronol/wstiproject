@@ -74,6 +74,7 @@ public class UserRepository {
         tmp+= "Imie\t\t"+lista.get(element).getImie()+"\n";
         tmp+= "Nazwisko\t"+lista.get(element).getNazwisko()+"\n";
         tmp+= "Nip\t\t\t"+lista.get(element).getNip()+"\n";
+        System.out.println(tmp);
         return tmp;
 
     }
