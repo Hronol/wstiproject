@@ -1,6 +1,5 @@
 package com.company;
 
-import java.math.BigInteger;
 import java.util.*;
 
 
@@ -9,7 +8,6 @@ public class UserRepository {
     public List<UserData> lista = new ArrayList<UserData>();
     public Scanner wpisz = new Scanner(System.in);
     public int sprawdzNip = 0;
-
 
     public void addUser(UserData userData) {
         lista.add(userData);
