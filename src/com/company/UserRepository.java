@@ -74,7 +74,7 @@ public class UserRepository {
         tmp+= "Nip\t\t\t"+lista.get(element).getNip()+"\n";
         System.out.println(tmp);
         return tmp;
-
     }
+
 
 }

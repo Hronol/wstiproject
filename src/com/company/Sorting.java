@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Sorting {
 
-    UserRepository userRepository = new UserRepository(UserData);
+    //UserRepository userRepository = new UserRepository(UserData);
 
     public void sortujeImieAsc(List<UserData> list){
         Collections.sort(list);
@@ -17,7 +17,7 @@ public class Sorting {
     }
 
     public void sortujNazwiskoAsc(List<UserData> list) {
-        userRepository.
+
     }
 
 
