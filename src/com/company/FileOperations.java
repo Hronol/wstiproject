@@ -24,17 +24,7 @@ public class FileOperations implements Serializable{
             System.out.println(file.getAbsolutePath()+"\n"+file.getCanonicalPath());
             }
         } catch (IOException e){
-            System.out.println("Błąd podczas tworzenia pliku");
-        }
-    }
-
-    public void saveToFile(String filename, ArrayList list){
-        Path filePath = Paths.get(filename);
-
-        try{
-            Files.write(filePath, list, Charset.defaultCharset());
-        }catch(IOException e){
-            e.printStackTrace();
+            System.out.println("\nBłąd podczas tworzenia pliku\n\n");
         }
     }
 
@@ -48,34 +38,35 @@ public class FileOperations implements Serializable{
         try {
             strumienZapisu = new FileOutputStream(plik);
         } catch (FileNotFoundException e) {
-            blad += ("Nie ma takiego pliku " + e + "\n");
+            blad += ("\nNie ma takiego pliku " + e + "\n\n");
         }
         DataOutputStream sd = new DataOutputStream(strumienZapisu);
 
         try {
             sd.writeInt(lista.size());
         } catch (IOException e) {
-            blad += ("Błąd zapisu liczebności towarow " + e + "\n");
+            blad += ("\nBłąd zapisu liczebności towarow " + e + "\n\n");
         }
         for (int i = 0; i < lista.size(); i++) {
             try {
                 sd.writeUTF(lista.get(i).getImie());
                 sd.writeUTF(lista.get(i).getNazwisko());
-                sd.writeInt(lista.get(i).getNip());
+                sd.writeUTF(lista.get(i).getNip());
 
             } catch (IOException e) {
-                blad += ("Błąd zapisu " + (i + 1) + "wyjatek " + e + "\n");
+                blad += ("\nBłąd zapisu " + (i + 1) + "wyjatek " + e + "\n\n");
             }
         }
         try {
             sd.close();
         } catch (IOException e) {
-            blad += ("Nieudane zamkniecie strumienia danych " + e + "\n");
+            blad += ("\nNieudane zamkniecie strumienia danych " + e + "\n\n");
         }
         try {
             strumienZapisu.close();
+            System.out.println("\nPoprawnie nadpisano baze\n\n");
         } catch (IOException e) {
-            blad += ("Nieudane zamkniecie strumienia zapisu " + e + "\n");
+            blad += ("\nNieudane zamkniecie strumienia zapisu " + e + "\n\n");
         }
 
     }
@@ -106,7 +97,7 @@ public class FileOperations implements Serializable{
             }
             catch (IOException e)
             {
-                blad += ("Błąd wczytania "+e+"\n");
+                blad += ("\nBłąd wczytania "+e+"\n\n");
             }
             for (int i =0 ; i<userzy;i++)
             {
@@ -115,15 +106,15 @@ public class FileOperations implements Serializable{
                     UserData tmp = new UserData();
                     tmp.setImie(sd.readUTF());
                     tmp.setNazwisko(sd.readUTF());
-                    tmp.setNip(sd.readInt());
+                    tmp.setNip(sd.readUTF());
                     lista.add(tmp);
                 }
                 catch (IOException e)
                 {
-                    blad += ("Błąd wczytania "+ (i+1) +"wyjatek "+ e +"\n");
+                    blad += ("\nBłąd wczytania "+ (i+1) +"wyjatek "+ e +"\n\n");
                 }
             }
-            System.out.println("Poprawnie wczytano bazę danych");
+            System.out.println("\nPoprawnie wczytano bazę danych\n\n");
 
             try
             {
@@ -131,7 +122,7 @@ public class FileOperations implements Serializable{
             }
             catch (IOException e)
             {
-                blad += ("Nieudane zamkniecie strumienia danych "+ e +"\n");
+                blad += ("\nNieudane zamkniecie strumienia danych "+ e +"\n\n");
             }
             try
             {
@@ -139,7 +130,7 @@ public class FileOperations implements Serializable{
             }
             catch (IOException e)
             {
-                blad += ("Nieudane zamkniecie strumienia czytania "+ e +"\n");
+                blad += ("\nNieudane zamkniecie strumienia czytania "+ e +"\n\n");
             }
     }
 

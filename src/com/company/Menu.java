@@ -127,24 +127,24 @@ public class Menu {
                         wyszukiwarka();
                         break;
                     case "2":
-                        i++;
                         if (i >= user.lista.size()){
-                            System.out.println("Poza zakresem bazy");
+                            System.out.println("\nPoza zakresem bazy\n\n");
                         } else
+                            ++i;
                             user.displayOneUser(i);
                         break;
                     case "3":
-                        i--;
                         if (i < 0){
-                            System.out.println("Poza zakresem bazy");
+                            System.out.println("\nPoza zakresem bazy\n\n");
                         } else
+                            i--;
                             user.displayOneUser(i);
                         break;
                     case "4":
-
+                            user.edytujKlienta(i);
                         break;
                     case "5":
-
+                            user.usunKlienta(i);
                         break;
                     case "6":
                         zarzadzajKlientami();
@@ -179,16 +179,16 @@ public class Menu {
 
                         break;
                     case "2":
-
+                        search.wyszukajPoNazwisku(user.lista);
                         break;
                     case "3":
-
+                        search.wyszukajPoNipie(user.lista);
                         break;
                     case "4":
                         zarzadzajKlientami();
                         break;
                     default:
-                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        System.out.println("\nBłąd wprowadzania danych. Spróbuj ponownie.\n\n");
                         break;
                 }
             }

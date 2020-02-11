@@ -7,44 +7,42 @@ public class UserRepository {
 
     public List<UserData> lista = new ArrayList<UserData>();
     public Scanner wpisz = new Scanner(System.in);
-    public int sprawdzNip = 0;
+    public String szablonNIP = "(\\d{10})";
+    public String sprawdzNIP = "";
+    private boolean done = false;
 
     public void addUser(UserData userData) {
         lista.add(userData);
     }
 
-    public void addUser(String Imie, String Nazwisko, int Nip) {
+    public void addUser(String Imie, String Nazwisko, String Nip) {
         UserData tmp = new UserData(Imie, Nazwisko, Nip);
         lista.add(tmp);
     }
 
-    public void usunUsera(){
-        if(lista.size() > 0) {
-            lista.remove(0);
-        }
-        else{
-            System.out.println("Lista pusta");
-        }
-    }
-
     public void wpiszUsera() {
+        done = false;
         wpisz = new Scanner(System.in);
         UserData tmp = new UserData();
         System.out.print("Podaj imie:\t");
         tmp.setImie(wpisz.nextLine());
         System.out.print("Podaj nazwisko:\t");
         tmp.setNazwisko(wpisz.nextLine());
-        System.out.print("Podaj nip:\t");
-        try {
-            sprawdzNip = wpisz.nextInt();
-            if (sprawdzNip >= 1 && sprawdzNip < 999) {
-                tmp.setNip(sprawdzNip);
-                addUser(tmp);
-            } else {
-                System.out.println("Błąd wprowadzania danych");
+        while (!done) {
+            try {
+                System.out.print("Podaj nip:\t");
+                sprawdzNIP = wpisz.nextLine();
+                if (sprawdzNIP.matches(szablonNIP)) {
+                    tmp.setNip(sprawdzNIP);
+                    addUser(tmp);
+                    done = true;
+                    System.out.println("\nWpisano klienta!\n\n");
+                } else {
+                    System.out.println("\nBłąd wprowadzania danych - wpisz same cyfry\n\n");
+                }
+            } catch (Exception e) {
+                System.out.println("\nBłąd wprowadzania danych - wpisz same cyfry\n\n");
             }
-        } catch (Exception e){
-            System.out.println("Błąd wprowadzania danych");
         }
     }
 
@@ -53,11 +51,11 @@ public class UserRepository {
 
         if (element < 0 || element > lista.size()-1)
         {
-            tmp += "Nie istnieje element o danym indeksie "+element;
+            tmp += "\nNie istnieje element o danym indeksie "+element+"\n\n";
         }
         else
         {
-            tmp+= "Klient nr: "+(element+1)+"\n";
+            tmp+= "\nKlient nr: "+(element+1)+"\n";
             tmp+= "Imie\t\t"+lista.get(element).getImie()+"\n";
             tmp+= "Nazwisko\t"+lista.get(element).getNazwisko()+"\n";
             tmp+= "Nip\t\t\t"+lista.get(element).getNip()+"\n";
@@ -68,7 +66,7 @@ public class UserRepository {
     public String displayOneUser(int element){
         String tmp = "";
 
-        tmp+= "Klient nr: "+(element+1)+"\n";
+        tmp+= "\nKlient nr: "+(element+1)+"\n";
         tmp+= "Imie\t\t"+lista.get(element).getImie()+"\n";
         tmp+= "Nazwisko\t"+lista.get(element).getNazwisko()+"\n";
         tmp+= "Nip\t\t\t"+lista.get(element).getNip()+"\n";
@@ -76,5 +74,41 @@ public class UserRepository {
         return tmp;
     }
 
+    public void edytujKlienta(int element){
+        done = false;
+        System.out.println("\nEdytowanie klienta:\n\n");
+        wpisz = new Scanner(System.in);
+        UserData tmp = new UserData();
+        System.out.print("Podaj imie:\t");
+        tmp.setImie(wpisz.nextLine());
+        System.out.print("Podaj nazwisko:\t");
+        tmp.setNazwisko(wpisz.nextLine());
+        while (!done) {
+            try {
+                System.out.print("Podaj nip:\t");
+                sprawdzNIP = wpisz.nextLine();
+                if (sprawdzNIP.matches(szablonNIP)) {
+                    tmp.setNip(sprawdzNIP);
+                    addUser(tmp);
+                    done = true;
+                    System.out.println("\nWpisano klienta!\n\n");
+                } else {
+                    System.out.println("\nBłąd wprowadzania danych - wpisz same cyfry\n\n");
+                }
+            } catch (Exception e) {
+                System.out.println("\nBłąd wprowadzania danych - wpisz same cyfry\n\n");
+            }
+        }
+    }
+
+    public void usunKlienta(int element){
+
+        if(lista.size() > 0) {
+            lista.remove(element);
+        }
+        else{
+            System.out.println("\nLista pusta\n\n");
+        }
+    }
 
 }

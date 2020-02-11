@@ -4,12 +4,11 @@ package com.company;
 import java.io.Serializable;
 
 public class UserData implements Serializable, Comparable<UserData> {
-    private String imie, nazwisko;
-    private int nip;
+    private String imie, nazwisko, nip;
     private static int idKlienta = 0;
     private static int idJob = 0;
 
-    public UserData(String imie, String nazwisko, int nip) {
+    public UserData(String imie, String nazwisko, String nip) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.nip = nip;
@@ -18,7 +17,7 @@ public class UserData implements Serializable, Comparable<UserData> {
     public UserData(){
         this.imie = "";
         this.nazwisko = "";
-        this.nip = 0;
+        this.nip = "";
     }
 
     public String getImie(){
@@ -29,7 +28,7 @@ public class UserData implements Serializable, Comparable<UserData> {
         return nazwisko;
     }
 
-    public int getNip(){
+    public String getNip(){
         return nip;
     }
 
@@ -41,7 +40,7 @@ public class UserData implements Serializable, Comparable<UserData> {
         this.nazwisko = nazwisko;
     }
 
-    public void setNip(int nip) {
+    public void setNip(String nip) {
         this.nip = nip;
     }
 
