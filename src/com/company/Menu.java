@@ -176,7 +176,6 @@ public class Menu {
                 switch (pick) {
                     case "1":
                         search.wyszukajPoImieniu(user.lista);
-
                         break;
                     case "2":
                         search.wyszukajPoNazwisku(user.lista);
@@ -243,7 +242,9 @@ public class Menu {
                 +"\n4. Sortuj po nazwisku DSC"
                 +"\n5. Sortuj po nipie ASC"
                 +"\n6. Sortuj po nipie DSC"
-                +"\n7. Wróć"
+                +"\n7. Sortuj po peselu ASC"
+                +"\n8. Sortuj po peselu DSC"
+                +"\n9. Wróć"
                 +"\n\nWybierz operacje:";
 
         do {
@@ -263,18 +264,25 @@ public class Menu {
                         wyswietlaj();
                         break;
                     case "3":
-
+                        sort.sortujNazwiskoAsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "4":
-
+                        sort.sortujNazwiskoDsc(user.lista);
                         break;
                     case "5":
-
+                        sort.sortujNIPAsc(user.lista);
                         break;
                     case "6":
-
+                        sort.sortujNIPDsc(user.lista);
                         break;
                     case "7":
+                        sort.sortujPeselAsc(user.lista);
+                        break;
+                    case "8":
+                        sort.sortujPeselDsc(user.lista);
+                        break;
+                    case "9":
                         zarzadzajKlientami();
                         break;
                     default:

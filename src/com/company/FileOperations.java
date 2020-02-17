@@ -52,6 +52,8 @@ public class FileOperations implements Serializable{
                 sd.writeUTF(lista.get(i).getImie());
                 sd.writeUTF(lista.get(i).getNazwisko());
                 sd.writeUTF(lista.get(i).getNip());
+                sd.writeUTF(lista.get(i).getPesel());
+                sd.writeUTF(lista.get(i).getNazwaFirmy());
 
             } catch (IOException e) {
                 blad += ("\nBłąd zapisu " + (i + 1) + "wyjatek " + e + "\n\n");
@@ -107,6 +109,8 @@ public class FileOperations implements Serializable{
                     tmp.setImie(sd.readUTF());
                     tmp.setNazwisko(sd.readUTF());
                     tmp.setNip(sd.readUTF());
+                    tmp.setPesel(sd.readUTF());
+                    tmp.setNazwaFirmy(sd.readUTF());
                     lista.add(tmp);
                 }
                 catch (IOException e)

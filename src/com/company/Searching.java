@@ -11,11 +11,14 @@ public class Searching {
     public String pick;
 
     public void wyszukajPoImieniu(List<UserData> lista){
+        System.out.print("\nWpisz nazwę do wyszukania: ");
         wpisz = new Scanner(System.in);
         pick = wpisz.nextLine();
         List<UserData> result = lista.stream()
                 .filter(a -> a.getImie().toLowerCase().contains(pick))
                 .collect(Collectors.toList());
+
+        lista.contains(result);
         }
 
     public  void wyszukajPoNazwisku(List<UserData> lista){
