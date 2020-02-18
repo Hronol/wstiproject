@@ -1,22 +1,28 @@
 package com.company;
 
 
-public class UserData {
-    private String imie, nazwisko;
-    private int nip;
+import java.io.Serializable;
+import java.util.Comparator;
+
+public class UserData implements Serializable{
+    private String imie, nazwisko, nip, pesel, nazwaFirmy;
     private static int idKlienta = 0;
     private static int idJob = 0;
 
-    public UserData(String imie, String nazwisko, int nip) {
+    public UserData(String imie, String nazwisko, String nip, String pesel, String nazwaFirmy) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.nip = nip;
+        this.pesel = pesel;
+        this.nazwaFirmy = nazwaFirmy;
     }
 
     public UserData(){
         this.imie = "";
         this.nazwisko = "";
-        this.nip = 0;
+        this.nip = "";
+        this.pesel = "";
+        this.nazwaFirmy = "";
     }
 
     public String getImie(){
@@ -27,8 +33,16 @@ public class UserData {
         return nazwisko;
     }
 
-    public int getNip(){
+    public String getNip(){
         return nip;
+    }
+
+    public String getPesel() {
+        return pesel;
+    }
+
+    public String getNazwaFirmy() {
+        return nazwaFirmy;
     }
 
     public void setImie(String imie) {
@@ -39,7 +53,20 @@ public class UserData {
         this.nazwisko = nazwisko;
     }
 
-    public void setNip(int nip) {
+    public void setNip(String nip) {
         this.nip = nip;
     }
+
+    public void setPesel(String pesel) {
+        this.pesel = pesel;
+    }
+
+    public void setNazwaFirmy(String nazwaFirmy) {
+        this.nazwaFirmy = nazwaFirmy;
+    }
+
+/*    @Override
+    public int compareTo(UserData o) {
+        return this.getImie().compareTo(o.getImie());
+    }*/
 }

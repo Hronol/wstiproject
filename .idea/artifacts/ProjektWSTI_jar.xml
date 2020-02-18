@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ProjektWSTI:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProjektWSTI_jar</output-path>
+    <root id="archive" name="ProjektWSTI.jar">
+      <element id="module-output" name="ProjektWSTI" />
+    </root>
+  </artifact>
+</component>

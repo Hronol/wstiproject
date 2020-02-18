@@ -1,17 +1,28 @@
 package com.company;
 
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Menu {
 
     public boolean flag = false;
     public Scanner wpisz = new Scanner(System.in);
     public String pick, koniec;
+    public int i=0;
     UserRepository user = new UserRepository();
+    FileOperations plik = new FileOperations();
+    Sorting sort = new Sorting();
+    Searching search = new Searching();
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 
     public void wyswietlaj() {
         for (int i = 0; i < user.lista.size(); i++)
-            System.out.println(user.displayUser(i));
+            System.out.println(user.displayAllUsers(i));
     }
 
     public void menuStart() {
@@ -36,7 +47,7 @@ public class Menu {
 
                         break;
                     case "3":
-
+                        zapiszWczytaj();
                         break;
                     case "4": {
                         System.out.println("Czy na pewno chcesz wyjść z programu? t/n");
@@ -57,12 +68,12 @@ public class Menu {
 
     public void zarzadzajKlientami() {
 
+        clearScreen();
 
         String menu = "1. Dodaj"
-                + "\n2. Edytuj"
-                + "\n3. Usuń"
-                + "\n4. Przegladaj"
-                + "\n5. Wróć"
+                + "\n2. Przeglądaj/edytuj pojedynczo"
+                + "\n3. Przegladaj wszystkich"
+                + "\n4. Wróć"
                 + "\n\nWybierz operacje:";
 
         do {
@@ -76,13 +87,155 @@ public class Menu {
                         user.wpiszUsera();
                         break;
                     case "2":
-
+                        pojedynczoKlienci();
                         break;
                     case "3":
-                        user.usunUsera();
+                        wyswietlaj();
+                        sortujListe();
                         break;
                     case "4":
-                        wyswietlaj();
+                        menuStart();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+                }
+            }
+        } while (!flag);
+
+    }
+
+    public void pojedynczoKlienci() {
+
+
+        String menu = "1. Wyszukaj"
+                + "\n2. 1 do przodu"
+                + "\n3. 1 do tyłu"
+                + "\n4. Edytuj"
+                + "\n5. Usuń"
+                + "\n6. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        wyszukiwarka();
+                        break;
+                    case "2":
+                        if (i < user.lista.size()){
+                            user.displayOneUser(i);
+                            i++;
+                        } else {
+                            i = 0;
+                            user.displayOneUser(i);
+                        }
+                        break;
+                    case "3":
+                        if (i > 0){
+                            user.displayOneUser(i);
+                            i--;
+                        } else {
+                            i = user.lista.size();
+                            user.displayOneUser(i);
+                        }
+                        break;
+                    case "4":
+                        System.out.println("Ostatni wybór 1. przód - 2.tył ?");
+                        pick = wpisz.nextLine();
+                        if(pick.contains("1")) {
+                            i--;
+                            if(i >= 0)
+                            user.edytujKlienta(i);
+                        } else {
+                            i++;
+                            if(i < user.lista.size())
+                            user.edytujKlienta(i);
+                        }
+                        break;
+                    case "5":
+                        user.usunKlienta(i);
+                        break;
+                    case "6":
+                        zarzadzajKlientami();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+                }
+            }
+        } while (!flag);
+
+    }
+
+    public void wyszukiwarka() {
+
+
+        String menu = "1. Wyszukaj po imieniu"
+                + "\n2. Wyszukaj po nazwisku"
+                + "\n3. Wyszukaj po nipie"
+                + "\n4. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        search.wyszukajPoImieniu(user.lista);
+                        break;
+                    case "2":
+                        search.wyszukajPoNazwisku(user.lista);
+                        break;
+                    case "3":
+                        search.wyszukajPoNipie(user.lista);
+                        break;
+                    case "4":
+                        zarzadzajKlientami();
+                        break;
+                    default:
+                        System.out.println("\nBłąd wprowadzania danych. Spróbuj ponownie.\n\n");
+                        break;
+                }
+            }
+        } while (!flag);
+
+    }
+
+    public void zapiszWczytaj(){
+
+        String menu = "1. Zapisz zmiany do pliku"
+                + "\n2. Exportuj plik do CSV"
+                + "\n3. Wczytaj z pliku"
+                + "\n4. Dodaj pusty plik"
+                + "\n5. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        plik.zapiszDoPliku(user.lista);
+                        break;
+                    case "2":
+                        plik.zapiszCSV(user.lista);
+                        break;
+                    case "3":
+                        plik.wczytajZPliku(user.lista);
+                        break;
+                    case "4":
+                        plik.tworzPlik();
                         break;
                     case "5":
                         menuStart();
@@ -94,7 +247,6 @@ public class Menu {
                 }
             }
         } while (!flag);
-
     }
 
 
@@ -102,10 +254,15 @@ public class Menu {
     public void sortujListe() {
 
 
-        String menu = "1. Sortuj po imieniu"
-                +"\n2. Sortuj po nazwisku"
-                +"\n3. Sortuj po nipie"
-                +"\n4. Wróć"
+        String menu = "1. Sortuj po imieniu ASC"
+                +"\n2. Sortuj po imieniu DSC"
+                +"\n3. Sortuj po nazwisku ASC"
+                +"\n4. Sortuj po nazwisku DSC"
+                +"\n5. Sortuj po nipie ASC"
+                +"\n6. Sortuj po nipie DSC"
+                +"\n7. Sortuj po peselu ASC"
+                +"\n8. Sortuj po peselu DSC"
+                +"\n9. Wróć"
                 +"\n\nWybierz operacje:";
 
         do {
@@ -117,17 +274,39 @@ public class Menu {
             else {
                 switch (pick) {
                     case "1":
-                        user.sortuj();
+                        sort.sortujeImieAsc(user.lista);
                         wyswietlaj();
                         break;
                     case "2":
-
+                        sort.sortujeImieDsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "3":
-
+                        sort.sortujNazwiskoAsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "4":
-                        menuStart();
+                        sort.sortujNazwiskoDsc(user.lista);
+                        wyswietlaj();
+                        break;
+                    case "5":
+                        sort.sortujNIPAsc(user.lista);
+                        wyswietlaj();
+                        break;
+                    case "6":
+                        sort.sortujNIPDsc(user.lista);
+                        wyswietlaj();
+                        break;
+                    case "7":
+                        sort.sortujPeselAsc(user.lista);
+                        wyswietlaj();
+                        break;
+                    case "8":
+                        sort.sortujPeselDsc(user.lista);
+                        wyswietlaj();
+                        break;
+                    case "9":
+                        zarzadzajKlientami();
                         break;
                     default:
                         System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");

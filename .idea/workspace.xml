@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ProjektWSTI:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="27ac5604-f68d-41ab-80bc-b15abcef7908" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/FileOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backup/lista.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backup/userdata.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userdata.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plik.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plik2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/FileOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Sorting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Sorting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userdata.dat" beforeDir="false" afterPath="$PROJECT_DIR$/userdata.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userdata.txt" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,78 +36,6 @@
   <component name="FavoritesManager">
     <favorites_list name="ProjektWSTI" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/UserData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding>
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#723#724#0" expanded="true" />
-                <element signature="e#763#764#0" expanded="true" />
-                <element signature="e#798#799#0" expanded="true" />
-                <element signature="e#828#829#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/UserRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Menu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1581">
-              <caret line="93" column="17" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/FileOperations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Orders.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -105,99 +46,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/com/company/addData.java" />
-        <option value="$PROJECT_DIR$/src/com/company/userService.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/com/company/userData.java" />
-        <option value="$PROJECT_DIR$/src/com/company/inInterface.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AddUserObject.java" />
-        <option value="$PROJECT_DIR$/src/com/company/UserFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/company/UserService.java" />
-        <option value="$PROJECT_DIR$/src/com/company/UserData2.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Orders.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Menu2.java" />
-        <option value="$PROJECT_DIR$/src/com/company/AddUser.java" />
-        <option value="$PROJECT_DIR$/src/com/company/UserData.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Menu.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Application.java" />
-        <option value="$PROJECT_DIR$/src/com/company/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/company/FileOperations.java" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
-  </component>
+  <component name="ProjectId" id="1UeRetqBk2SMgDCg4zadSdajVUD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ProjektWSTI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjektWSTI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjektWSTI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjektWSTI" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjektWSTI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjektWSTI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProjektWSTI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProjektWSTI" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="company" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GameExchangeProject" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.Application">
     <configuration name="AddUserObject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -213,7 +81,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Application" />
       <module name="ProjektWSTI" />
       <extension name="coverage">
@@ -228,10 +96,21 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Application" />
         <item itemvalue="Application.AddUserObject" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -356,72 +235,85 @@
       <option name="project" value="LOCAL" />
       <updated>1560626092604</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="nvm">
+      <created>1560882771182</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1560882771182</updated>
+    </task>
+    <task id="LOCAL-00018" summary="- FileOperations are working&#10;- added asc, desc name sorting&#10;- adding display users 1 by 1 in progress">
+      <created>1580329780080</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1580329780080</updated>
+    </task>
+    <task id="LOCAL-00019" summary="- added sorting, displaying 1by1, exception handle">
+      <created>1580844600271</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1580844600271</updated>
+    </task>
+    <task id="LOCAL-00020" summary="- added sorting, displaying 1by1, exception handle">
+      <created>1580844995848</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1580844995848</updated>
+    </task>
+    <task id="LOCAL-00021" summary="- added sorting, displaying 1by1, exception handle">
+      <created>1580852481457</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1580852481457</updated>
+    </task>
+    <task id="LOCAL-00022" summary="- added sorting, displaying 1by1, exception handle">
+      <created>1580852508408</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1580852508408</updated>
+    </task>
+    <task id="LOCAL-00023" summary="- searching in progress">
+      <created>1580933371775</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1580933371775</updated>
+    </task>
+    <task id="LOCAL-00024" summary="- regex added&#10;- searching without display&#10;- edit/remove user">
+      <created>1581453674617</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1581453674617</updated>
+    </task>
+    <task id="LOCAL-00025" summary="- regex added&#10;- searching without display&#10;- edit/remove user">
+      <created>1581789303329</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1581789303329</updated>
+    </task>
+    <task id="LOCAL-00026" summary="- edit searching methods">
+      <created>1581977770350</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1581977770350</updated>
+    </task>
+    <task id="LOCAL-00027" summary="- add gitignore :D">
+      <created>1581978060041</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1581978060041</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992658" weight="0.29403606" />
-      <window_info id="Structure" order="1" sideWeight="0.5007342" side_tool="true" weight="0.25797504" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" sideWeight="0.5007342" side_tool="true" weight="0.2590604" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.14390603" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2393539" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32892805" />
-      <window_info anchor="bottom" id="Tail" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32892805" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32892805" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32892805" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.3295302" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Coverage" order="6" side_tool="true" weight="0.3295302" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992658" visible="true" weight="0.13087249" />
-      <window_info id="Structure" order="1" sideWeight="0.5007342" side_tool="true" weight="0.2590604" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" sideWeight="0.5007342" side_tool="true" weight="0.2590604" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32892805" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28487518" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32892805" />
-      <window_info anchor="bottom" id="Tail" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32892805" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32892805" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32892805" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -429,20 +321,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -464,6 +343,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
     <MESSAGE value="added readme" />
     <MESSAGE value="some changes" />
@@ -473,14 +353,138 @@
     <MESSAGE value="poprawiona dzialajaca lista z dodawaniem obiektow" />
     <MESSAGE value="refactor klasy AddUser na UserRepository" />
     <MESSAGE value="niedzialajacy sort" />
-    <option name="LAST_COMMIT_MESSAGE" value="niedzialajacy sort" />
+    <MESSAGE value="nvm" />
+    <MESSAGE value="- FileOperations are working&#10;- added asc, desc name sorting&#10;- adding display users 1 by 1 in progress" />
+    <MESSAGE value="- added sorting, displaying 1by1, exception handle" />
+    <MESSAGE value="- searching in progress" />
+    <MESSAGE value="- regex added&#10;- searching without display&#10;- edit/remove user" />
+    <MESSAGE value="- edit searching methods" />
+    <MESSAGE value="- add gitignore :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="- add gitignore :D" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1512" y="183" key="#Project_Structure" timestamp="1580241849927">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1512" y="183" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1580241849927" />
+    <state x="361" y="71" key="#Updates" timestamp="1575715191458">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Updates/0.0.1536.824@0.0.1536.824" timestamp="1575715191458" />
+    <state x="1399" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580242080241">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1399" y="167" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1580242080241" />
+    <state x="1085" y="205" key="#com.intellij.ide.util.MemberChooser" timestamp="1581974368132">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1085" y="205" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1040@0.0.2560.1040" timestamp="1581974368132" />
+    <state x="1650" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1580929207147">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1650" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1580929207147" />
+    <state x="1574" y="121" key="CommitChangelistDialog2" timestamp="1581978059517">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1574" y="121" key="CommitChangelistDialog2/0.0.2560.1040@0.0.2560.1040" timestamp="1581978059517" />
+    <state x="915" y="211" key="FileChooserDialogImpl" timestamp="1580845716682">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1575715462714" />
+    <state x="915" y="211" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1580845716682" />
+    <state width="1266" height="350" key="GridCell.Tab.0.bottom" timestamp="1582061791704">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1582061791704" />
+    <state width="1266" height="350" key="GridCell.Tab.0.center" timestamp="1582061791704">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1582061791704" />
+    <state width="1266" height="350" key="GridCell.Tab.0.left" timestamp="1582061791704">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1582061791704" />
+    <state width="1266" height="350" key="GridCell.Tab.0.right" timestamp="1582061791704">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1582061791704" />
+    <state width="1266" height="350" key="GridCell.Tab.1.bottom" timestamp="1582061786525">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1582061786525" />
+    <state width="1266" height="350" key="GridCell.Tab.1.center" timestamp="1582061786524">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1582061786524" />
+    <state width="1266" height="350" key="GridCell.Tab.1.left" timestamp="1582061786524">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1582061786524" />
+    <state width="1266" height="350" key="GridCell.Tab.1.right" timestamp="1582061786524">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state width="1493" height="253" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580047885932" />
+    <state width="1266" height="350" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1582061786524" />
+    <state x="349" y="148" key="IDE.errors.dialog" timestamp="1580043864635">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="148" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1580043864635" />
+    <state x="1400" y="99" key="SettingsEditor" timestamp="1581977971785">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1400" y="99" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1581977971785" />
+    <state x="1512" y="257" key="Vcs.Push.Dialog.v2" timestamp="1581978062417">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1512" y="257" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1581978062417" />
+    <state x="1373" y="100" width="1094" height="847" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1580241696224">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1373" y="100" width="1094" height="847" key="com.intellij.dvcs.ui.CompareBranchesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1580241696224" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1580239889999">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1580239889999" />
+    <state x="1603" y="121" width="607" height="804" key="find.popup" timestamp="1580326580904">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1603" y="121" width="607" height="804" key="find.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1580326580904" />
+    <state x="348" y="40" key="new project wizard" timestamp="1580846107660">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1575715490801" />
+    <state x="348" y="40" key="new project wizard/0.0.2560.1040@0.0.2560.1040" timestamp="1580846107660" />
+    <state x="1662" y="143" key="refactoring.ChangeSignatureDialog" timestamp="1581790234581">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1662" y="143" key="refactoring.ChangeSignatureDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1581790234581" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/com/company/FileOperations.java</url>
+          <line>19</line>
+          <properties class="com.company.FileOperations" method="tworzPlik">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/Menu.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties />
-        </breakpoint>
+        <breakpoint enabled="true" type="java-exception" />
       </default-breakpoints>
     </breakpoint-manager>
   </component>
@@ -492,167 +496,5 @@
     <SUITE FILE_PATH="coverage/ProjektWSTI$Application.ic" NAME="Application Coverage Results" MODIFIED="1560619411903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.company.UserRepo</FILTER>
     </SUITE>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/AddUserObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/UserRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Menu2.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/UserData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-            <element signature="e#828#829#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1581">
-          <caret line="93" column="17" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Orders.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/FileOperations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>ProjektWSTI</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>12</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
