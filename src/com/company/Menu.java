@@ -127,24 +127,38 @@ public class Menu {
                         wyszukiwarka();
                         break;
                     case "2":
-                        if (i >= user.lista.size()){
-                            System.out.println("\nPoza zakresem bazy\n\n");
-                        } else
-                            ++i;
+                        if (i < user.lista.size()){
                             user.displayOneUser(i);
+                            i++;
+                        } else {
+                            i = 0;
+                            user.displayOneUser(i);
+                        }
                         break;
                     case "3":
-                        if (i < 0){
-                            System.out.println("\nPoza zakresem bazy\n\n");
-                        } else
-                            i--;
+                        if (i > 0){
                             user.displayOneUser(i);
+                            i--;
+                        } else {
+                            i = user.lista.size();
+                            user.displayOneUser(i);
+                        }
                         break;
                     case "4":
+                        System.out.println("Ostatni wybór 1. przód - 2.tył ?");
+                        pick = wpisz.nextLine();
+                        if(pick.contains("1")) {
+                            i--;
+                            if(i >= 0)
                             user.edytujKlienta(i);
+                        } else {
+                            i++;
+                            if(i < user.lista.size())
+                            user.edytujKlienta(i);
+                        }
                         break;
                     case "5":
-                            user.usunKlienta(i);
+                        user.usunKlienta(i);
                         break;
                     case "6":
                         zarzadzajKlientami();
@@ -198,9 +212,10 @@ public class Menu {
     public void zapiszWczytaj(){
 
         String menu = "1. Zapisz zmiany do pliku"
-                + "\n2. Wczytaj z pliku"
-                + "\n3. Dodaj pusty plik"
-                + "\n4. Wróć"
+                + "\n2. Exportuj plik do CSV"
+                + "\n3. Wczytaj z pliku"
+                + "\n4. Dodaj pusty plik"
+                + "\n5. Wróć"
                 + "\n\nWybierz operacje:";
 
         do {
@@ -214,12 +229,15 @@ public class Menu {
                         plik.zapiszDoPliku(user.lista);
                         break;
                     case "2":
-                        plik.wczytajZPliku(user.lista);
+                        plik.zapiszCSV(user.lista);
                         break;
                     case "3":
-                        plik.tworzPlik();
+                        plik.wczytajZPliku(user.lista);
                         break;
                     case "4":
+                        plik.tworzPlik();
+                        break;
+                    case "5":
                         menuStart();
                         break;
                     default:
@@ -269,18 +287,23 @@ public class Menu {
                         break;
                     case "4":
                         sort.sortujNazwiskoDsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "5":
                         sort.sortujNIPAsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "6":
                         sort.sortujNIPDsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "7":
                         sort.sortujPeselAsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "8":
                         sort.sortujPeselDsc(user.lista);
+                        wyswietlaj();
                         break;
                     case "9":
                         zarzadzajKlientami();

@@ -7,17 +7,12 @@ import java.util.stream.Collectors;
 
 public class Sorting {
 
- //https://stackoverflow.com/questions/18895915/how-to-sort-an-array-of-objects-in-java
-    //https://www.baeldung.com/java-8-comparator-comparing
-    // reverse ogarnac
-
     public void sortujeImieAsc(List<UserData> list) {
-        Collections.sort(list);
+        Collections.sort(list, Comparator.comparing(UserData::getImie));
     }
 
     public void sortujeImieDsc(List<UserData> list) {
-       // Collections.sort(list);
-        Collections.reverse(list);
+        Collections.sort(list, Comparator.comparing(UserData::getImie).reversed());
     }
 
     public void sortujNazwiskoAsc(List<UserData> list) {
@@ -25,7 +20,7 @@ public class Sorting {
     }
 
     public void sortujNazwiskoDsc(List<UserData> list) {
-        Collections.sort(list, Comparator.comparing(UserData::getNazwisko));
+        Collections.sort(list, Comparator.comparing(UserData::getNazwisko).reversed());
     }
 
     public void sortujNIPAsc(List<UserData> list) {
@@ -33,7 +28,7 @@ public class Sorting {
     }
 
     public void sortujNIPDsc(List<UserData> list) {
-        Collections.sort(list, Comparator.comparing(UserData::getNip));
+        Collections.sort(list, Comparator.comparing(UserData::getNip).reversed());
     }
 
     public void sortujPeselAsc(List<UserData> list) {
@@ -41,7 +36,7 @@ public class Sorting {
     }
 
     public void sortujPeselDsc(List<UserData> list) {
-        Collections.sort(list, Comparator.comparing(UserData::getPesel));
+        Collections.sort(list, Comparator.comparing(UserData::getPesel).reversed());
     }
 
 }

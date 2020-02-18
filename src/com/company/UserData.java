@@ -4,7 +4,7 @@ package com.company;
 import java.io.Serializable;
 import java.util.Comparator;
 
-public class UserData implements Serializable, Comparable<UserData>{
+public class UserData implements Serializable{
     private String imie, nazwisko, nip, pesel, nazwaFirmy;
     private static int idKlienta = 0;
     private static int idJob = 0;
@@ -65,8 +65,8 @@ public class UserData implements Serializable, Comparable<UserData>{
         this.nazwaFirmy = nazwaFirmy;
     }
 
-    @Override
+/*    @Override
     public int compareTo(UserData o) {
         return this.getImie().compareTo(o.getImie());
-    }
+    }*/
 }

@@ -8,23 +8,26 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class FileOperations implements Serializable{
 
     private String filename = "plik.txt";
-    List<UserData> lista;
-    UserRepository userRepository = new UserRepository();
+    private String newFile = "";
+    public Scanner wpisz = new Scanner(System.in);
 
-    public void tworzPlik(){
-        try{
-        File file = new File("plik2.txt");
-        if (!file.exists()) {
-            file.createNewFile();
-            System.out.println(file.getAbsolutePath()+"\n"+file.getCanonicalPath());
+    public void tworzPlik() {
+        try {
+            System.out.print("\nPodaj nazwę nowego pliku:\t");
+            newFile = wpisz.nextLine();
+            File file = new File(newFile+".txt");
+            if (!file.exists()) {
+                file.createNewFile();
+                System.out.println("\nPlik został poprawnie utworzony\n");
             }
-        } catch (IOException e){
-            System.out.println("\nBłąd podczas tworzenia pliku\n\n");
+        } catch (IOException e) {
+            System.out.println("\nTaki plik już istnieje! Spróbuj ponownie.\n\n");
         }
     }
 
@@ -138,7 +141,32 @@ public class FileOperations implements Serializable{
             }
     }
 
-    public void wielkosclisty(List<UserData> list){
-        System.out.println("Wielkosc listy : "+list.size());
+    public void zapiszCSV(List<UserData> list)
+    {
+        try
+        {
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("userdata.csv"), "UTF-8"));
+            for (UserData userData : list)
+            {
+                StringBuffer sb = new StringBuffer();
+                sb.append(userData.getImie().trim().length() == 0? "" : userData.getImie());
+                sb.append(",");
+                sb.append(userData.getNazwisko().trim().length() == 0? "" : userData.getNazwisko());
+                sb.append(",");
+                sb.append(userData.getNip().trim().length() == 0? "" : userData.getNip());
+                sb.append(",");
+                sb.append(userData.getPesel().trim().length() == 0? "" : userData.getPesel());
+                sb.append(",");
+                sb.append(userData.getNazwaFirmy().trim().length() == 0? "" : userData.getNazwaFirmy());
+
+                bw.write(sb.toString());
+                bw.newLine();
+            }
+            bw.flush();
+            bw.close();
+        }
+        catch (UnsupportedEncodingException e) {}
+        catch (FileNotFoundException e){}
+        catch (IOException e){}
     }
 }

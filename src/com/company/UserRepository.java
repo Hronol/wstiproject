@@ -7,9 +7,10 @@ public class UserRepository {
 
     public List<UserData> lista = new ArrayList<UserData>();
     public Scanner wpisz = new Scanner(System.in);
-    public String szablonNIP = "(\\d{10})";
-    public String sprawdzCyfry = "";
-    public String szablonPesel = "(\\d{11})";
+    public String set = "";
+    private String szablonNIP = "(\\d{10})";
+    private String sprawdzCyfry = "";
+    private String szablonPesel = "(\\d{11})";
     private boolean done = false;
 
     public void addUser(UserData userData) {
@@ -68,8 +69,8 @@ public class UserRepository {
             tmp+= "\nKlient nr: "+(element+1)+"\n";
             tmp+= "Imie\t\t\t\t"+lista.get(element).getImie()+"\n";
             tmp+= "Nazwisko\t\t\t"+lista.get(element).getNazwisko()+"\n";
-            tmp+= "Nip\t\t\t\t"+lista.get(element).getNip()+"\n";
-            tmp+= "Pesel\t\t\t"+lista.get(element).getPesel()+"\n";
+            tmp+= "Nip\t\t\t\t\t"+lista.get(element).getNip()+"\n";
+            tmp+= "Pesel\t\t\t\t"+lista.get(element).getPesel()+"\n";
             tmp+= "Nazwa firmy\t\t\t"+lista.get(element).getNazwaFirmy()+"\n";
         }
         return tmp;
@@ -81,15 +82,48 @@ public class UserRepository {
         tmp+= "\nKlient nr: "+(element+1)+"\n";
         tmp+= "Imie\t\t\t"+lista.get(element).getImie()+"\n";
         tmp+= "Nazwisko\t\t"+lista.get(element).getNazwisko()+"\n";
-        tmp+= "Nip\t\t\t\t"+lista.get(element).getNip()+"\n";
-        tmp+= "Pesel\t\t\t"+lista.get(element).getPesel()+"\n";
+        tmp+= "Nip\t\t\t\t\t"+lista.get(element).getNip()+"\n";
+        tmp+= "Pesel\t\t\t\t"+lista.get(element).getPesel()+"\n";
         tmp+= "Nazwa firmy\t\t"+lista.get(element).getNazwaFirmy()+"\n";
         System.out.println(tmp);
         return tmp;
     }
 
     public void edytujKlienta(int element){
-
+        wpisz = new Scanner(System.in);
+        System.out.println("Edytuj imie:\t *enter pominie krok");
+        set = wpisz.nextLine();
+        if (!set.isEmpty()) {
+            lista.get(element).setImie(set);
+        }
+        System.out.println("Edytuj nazwisko:\t *enter pominie krok");
+        set = wpisz.nextLine();
+        if (!set.isEmpty()) {
+            lista.get(element).setNazwisko(set);
+        }
+        while (!done) {
+            System.out.println("Edytuj nip:\t *enter pominie krok");
+            sprawdzCyfry = wpisz.nextLine();
+            if (sprawdzCyfry.matches(szablonNIP)) {
+                lista.get(element).setNip(sprawdzCyfry);
+                done = true;
+            }
+        }
+        done = false;
+        while (!done){
+            System.out.println("Edytuj pesel:\t *enter pominie krok");
+            sprawdzCyfry = wpisz.nextLine();
+            if (sprawdzCyfry.matches(szablonPesel)) {
+                lista.get(element).setPesel(sprawdzCyfry);
+                done = true;
+            }
+        }
+        System.out.println("Edytuj nazwę firmy:\t *enter pominie krok");
+        set = wpisz.nextLine();
+        if (!set.isEmpty()) {
+            lista.get(element).setNazwaFirmy(wpisz.nextLine());
+        }
+        System.out.println("\nPoprawnie zaktualizowano klienta\n");
     }
 
     public void usunKlienta(int element){
