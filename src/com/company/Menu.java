@@ -12,12 +12,18 @@ public class Menu {
     public ArrayList<Integer> tab = new ArrayList<Integer>();
     UserRepository user = new UserRepository();
     FileOperations plik = new FileOperations();
+    OrdersRepository orders = new OrdersRepository();
     Sorting sort = new Sorting();
     Searching search = new Searching();
 
-    public void wyswietlaj() {
+    public void wyswietlAllUsers() {
         for (int i = 0; i < user.lista.size(); i++)
             System.out.println(user.displayAllUsers(i));
+    }
+
+    public void wyswietlAllZamowienia() {
+        for (int i = 0; i < orders.ordersList.size(); i++)
+            System.out.println(orders.displayAllOrders(i));
     }
 
     public void menuStart() {
@@ -39,7 +45,7 @@ public class Menu {
                         zarzadzajKlientami();
                         break;
                     case "2":
-
+                        historiaTransakcji();
                         break;
                     case "3":
                         zapiszWczytaj();
@@ -83,7 +89,7 @@ public class Menu {
                         pojedynczoKlienci();
                         break;
                     case "3":
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         sortujListe();
                         break;
                     case "4":
@@ -361,35 +367,35 @@ public class Menu {
                 switch (pick) {
                     case "1":
                         sort.sortujeImieAsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "2":
                         sort.sortujeImieDsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "3":
                         sort.sortujNazwiskoAsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "4":
                         sort.sortujNazwiskoDsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "5":
                         sort.sortujNIPAsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "6":
                         sort.sortujNIPDsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "7":
                         sort.sortujPeselAsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "8":
                         sort.sortujPeselDsc(user.lista);
-                        wyswietlaj();
+                        wyswietlAllUsers();
                         break;
                     case "9":
                         zarzadzajKlientami();
@@ -402,5 +408,239 @@ public class Menu {
         }while (!flag);
     }
 
+    public void historiaTransakcji() {
+
+        String menu = "1. Dodaj"
+                + "\n2. Przeglądaj/edytuj pojedynczo"
+                + "\n3. Przegladaj wszystkie"
+                + "\n4. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        orders.dodajZamowienie();
+                        break;
+                    case "2":
+                        pojedynczoTransakcje();
+                        break;
+                    case "3":
+                        wyswietlAllZamowienia();
+                        sortujListeZamowien();
+                        break;
+                    case "4":
+                        menuStart();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+                }
+            }
+        } while (!flag);
+
+    }
+
+    public void pojedynczoTransakcje() {
+
+
+        String menu = "1. Wyszukaj"
+                + "\n2. 1 do przodu"
+                + "\n3. 1 do tyłu"
+                + "\n4. Edytuj"
+                + "\n5. Usuń"
+                + "\n6. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        wyszukiwarkaZamowien();
+                        break;
+                    case "2":
+                        if (i < orders.ordersList.size()){
+                            j=i;
+                            orders.displayOneOrder(i);
+                            i++;
+                        } else {
+                            i = 0;
+                            j=i;
+                            orders.displayOneOrder(i);
+                        }
+                        break;
+                    case "3":
+                        if (i > 0){
+                            j=i;
+                            orders.displayOneOrder(i);
+                            i--;
+                        } else {
+                            i = orders.ordersList.size();
+                            j=i;
+                            orders.displayOneOrder(i);
+                        }
+                        break;
+                    case "4":
+                        orders.edytujZamowienie(j);
+                        break;
+                    case "5":
+                        System.out.println("\nUWAGA! Czy napewno chcesz usunąć zamówienie nr: "+j+" ? t/n");
+                        koniec = wpisz.nextLine();
+                        if (koniec.equals("t")) {
+                            orders.usuńZamówienie(j);
+                        } else {
+                            System.out.println("\nCzynnośc została cofnięta");
+                        }
+                        break;
+                    case "6":
+                        historiaTransakcji();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+                }
+            }
+        } while (!flag);
+
+    }
+
+    public void wyszukiwarkaZamowien() {
+
+
+        String menu = "1. Wyszukaj po nazwie usługi"
+                + "\n2. Wyszukaj po kwocie"
+                + "\n3. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        x=0;
+                        tab = search.wyszukajPoUsludze(orders.ordersList);
+                        user.displayOneUser(tab.get(x));
+                        while (x < tab.size()){
+                            System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
+                            pick = wpisz.nextLine();
+                            switch (pick){
+                                case "1":
+                                    x++;
+                                    if (x >= tab.size()){
+                                        x=0;
+                                        orders.displayOneOrder(tab.get(x));
+                                    } else
+                                        orders.displayOneOrder(tab.get(x));
+                                    break;
+                                case "2":
+                                    x--;
+                                    if (x < 0){
+                                        x=tab.size()-1;
+                                        orders.displayOneOrder(tab.get(x));
+                                    } else
+                                        orders.displayOneOrder(tab.get(x));
+                                    break;
+                                case "3":
+                                    wyszukiwarkaZamowien();
+                                    break;
+                            }
+                        }
+                        break;
+                    case "2":
+                        x=0;
+                        tab = search.wyszukajPoNazwisku(user.lista);
+                        user.displayOneUser(tab.get(x));
+                        while (x < tab.size()){
+                            System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
+                            pick = wpisz.nextLine();
+                            switch (pick){
+                                case "1":
+                                    x++;
+                                    if (x >= tab.size()){
+                                        x=0;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "2":
+                                    x--;
+                                    if (x < 0){
+                                        x=tab.size()-1;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "3":
+                                    wyszukiwarka();
+                                    break;
+                            }
+                        }
+                        break;
+                    case "3":
+                        historiaTransakcji();
+                        break;
+                    default:
+                        System.out.println("\nBłąd wprowadzania danych. Spróbuj ponownie.\n\n");
+                        break;
+                }
+            }
+        } while (!flag);
+
+    }
+
+    public void sortujListeZamowien() {
+
+        String menu = "1. Sortuj po imieniu ASC"
+                +"\n2. Sortuj po imieniu DSC"
+                +"\n3. Sortuj po peselu ASC"
+                +"\n4. Sortuj po peselu DSC"
+                +"\n5. Wróć"
+                +"\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4"){
+                flag=true;
+            }
+            else {
+                switch (pick) {
+                    case "1":
+                        sort.sortujNazweUslugiAsc(orders.ordersList);
+                        wyswietlAllZamowienia();
+                        break;
+                    case "2":
+                        sort.sortujNazweUslugiDsc(orders.ordersList);
+                        wyswietlAllZamowienia();
+                        break;
+                    case "3":
+                        sort.sortujKwotaAsc(orders.ordersList);
+                        wyswietlAllZamowienia();
+                        break;
+                    case "4":
+                        sort.sortujKwotaDsc(orders.ordersList);
+                        wyswietlAllZamowienia();
+                        break;
+                    case "5":
+                        historiaTransakcji();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+                }
+            }
+        }while (!flag);
+    }
 
 }
