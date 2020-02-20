@@ -1,6 +1,8 @@
 package com.company;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 
 public class UserRepository {
@@ -128,7 +130,7 @@ public class UserRepository {
 
     public void usunKlienta(int element){
 
-        if(lista.size() > 0) {
+        if(lista.size() >= 0) {
             lista.remove(element);
         }
         else{
