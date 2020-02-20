@@ -74,6 +74,30 @@ public class Searching {
         }
         return (tabHit);
     }
+
+    public ArrayList<Integer> wyszukajPoUsludze(List<Orders> lista) {
+        tabHit = new ArrayList<>();
+        System.out.print("\nWpisz część nazwy do wyszukania: ");
+        wpisz = new Scanner(System.in);
+        pick = wpisz.nextLine();
+
+        List<Orders> result = lista.stream()
+                .filter(a -> a.getNazwaUslugi().toLowerCase().contains(pick))
+                .collect(Collectors.toList());
+
+        if (result.size() > 0) {
+            while (i < result.size()) {
+                x = lista.indexOf(result.get(i));
+                tabHit.add(x);
+                i++;
+            }
+        } else {
+            System.out.println("\nBrak wyników wyszukiwania\n");
+        }
+        return (tabHit);
+    }
+
+
 }
 
 

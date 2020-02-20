@@ -38,4 +38,20 @@ public class Sorting {
         Collections.sort(list, Comparator.comparing(UserData::getPesel).reversed());
     }
 
+    public void sortujNazweUslugiAsc(List<Orders> list) {
+        Collections.sort(list, Comparator.comparing(Orders::getNazwaUslugi));
+    }
+
+    public void sortujNazweUslugiDsc(List<Orders> list) {
+        Collections.sort(list, Comparator.comparing(Orders::getNazwaUslugi).reversed());
+    }
+
+    public void sortujKwotaAsc(List<Orders> list) {
+        Collections.sort(list, Comparator.comparing(Orders::getKwota1));
+    }
+
+    public void sortujKwotaDsc(List<Orders> list) {
+        Collections.sort(list, Comparator.comparing(Orders::getKwota1).reversed());
+    }
+
 }

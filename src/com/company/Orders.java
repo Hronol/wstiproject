@@ -7,6 +7,24 @@ public class Orders extends UserData {
     private double kwota1, kwota2;
     private int idUsera;
 
+    public Orders(String imie, String nazwisko, String nip, String pesel, String nazwaFirmy, String nazwaUslugi, String nazwaCzesci, double kwota1) {
+        super(imie, nazwisko, nip, pesel, nazwaFirmy);
+        this.nazwaUslugi = nazwaUslugi;
+        this.nazwaCzesci = nazwaCzesci;
+        this.kwota1 = kwota1;
+    }
+
+    public Orders(String nazwaUslugi, String nazwaCzesci, double kwota1) {
+        this.nazwaUslugi = nazwaUslugi;
+        this.nazwaCzesci = nazwaCzesci;
+        this.kwota1 = kwota1;
+    }
+
+    public Orders(){
+        this.nazwaUslugi = "";
+        this.nazwaCzesci = "";
+        this.kwota1 = 0.0;
+    }
 
     public String getNazwaUslugi() {
         return nazwaUslugi;
