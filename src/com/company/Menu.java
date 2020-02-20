@@ -1,24 +1,19 @@
 package com.company;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Menu {
 
     public boolean flag = false;
     public Scanner wpisz = new Scanner(System.in);
     public String pick, koniec;
-    public int i=0;
+    public int i=0, j=0, x=0;
+    public ArrayList<Integer> tab = new ArrayList<Integer>();
     UserRepository user = new UserRepository();
     FileOperations plik = new FileOperations();
     Sorting sort = new Sorting();
     Searching search = new Searching();
-
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
 
     public void wyswietlaj() {
         for (int i = 0; i < user.lista.size(); i++)
@@ -67,8 +62,6 @@ public class Menu {
     }
 
     public void zarzadzajKlientami() {
-
-        clearScreen();
 
         String menu = "1. Dodaj"
                 + "\n2. Przeglądaj/edytuj pojedynczo"
@@ -128,37 +121,37 @@ public class Menu {
                         break;
                     case "2":
                         if (i < user.lista.size()){
+                            j=i;
                             user.displayOneUser(i);
                             i++;
                         } else {
                             i = 0;
+                            j=i;
                             user.displayOneUser(i);
                         }
                         break;
                     case "3":
                         if (i > 0){
+                            j=i;
                             user.displayOneUser(i);
                             i--;
                         } else {
                             i = user.lista.size();
+                            j=i;
                             user.displayOneUser(i);
                         }
                         break;
                     case "4":
-                        System.out.println("Ostatni wybór 1. przód - 2.tył ?");
-                        pick = wpisz.nextLine();
-                        if(pick.contains("1")) {
-                            i--;
-                            if(i >= 0)
-                            user.edytujKlienta(i);
-                        } else {
-                            i++;
-                            if(i < user.lista.size())
-                            user.edytujKlienta(i);
-                        }
+                        user.edytujKlienta(j);
                         break;
                     case "5":
-                        user.usunKlienta(i);
+                        System.out.println("\nUWAGA! Czy napewno chcesz usunąć klienta nr: "+j+" ? t/n");
+                        koniec = wpisz.nextLine();
+                        if (koniec.equals("t")) {
+                            user.usunKlienta(j);
+                        } else {
+                            System.out.println("\nZapis został cofnięty");
+                        }
                         break;
                     case "6":
                         zarzadzajKlientami();
@@ -189,13 +182,94 @@ public class Menu {
             } else {
                 switch (pick) {
                     case "1":
-                        search.wyszukajPoImieniu(user.lista);
+                        x=0;
+                        tab = search.wyszukajPoImieniu(user.lista);
+                        user.displayOneUser(tab.get(x));
+                        while (x < tab.size()){
+                            System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
+                            pick = wpisz.nextLine();
+                            switch (pick){
+                                case "1":
+                                    x++;
+                                    if (x >= tab.size()){
+                                        x=0;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "2":
+                                    x--;
+                                    if (x < 0){
+                                        x=tab.size()-1;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "3":
+                                    wyszukiwarka();
+                                    break;
+                            }
+                        }
                         break;
                     case "2":
-                        search.wyszukajPoNazwisku(user.lista);
+                        x=0;
+                        tab = search.wyszukajPoNazwisku(user.lista);
+                        user.displayOneUser(tab.get(x));
+                        while (x < tab.size()){
+                            System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
+                            pick = wpisz.nextLine();
+                            switch (pick){
+                                case "1":
+                                    x++;
+                                    if (x >= tab.size()){
+                                        x=0;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "2":
+                                    x--;
+                                    if (x < 0){
+                                        x=tab.size()-1;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "3":
+                                    wyszukiwarka();
+                                    break;
+                            }
+                        }
                         break;
                     case "3":
-                        search.wyszukajPoNipie(user.lista);
+                        x=0;
+                        tab = search.wyszukajPoNipie(user.lista);
+                        user.displayOneUser(tab.get(x));
+                        while (x < tab.size()){
+                            System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
+                            pick = wpisz.nextLine();
+                            switch (pick){
+                                case "1":
+                                    x++;
+                                    if (x >= tab.size()){
+                                        x=0;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "2":
+                                    x--;
+                                    if (x < 0){
+                                        x=tab.size()-1;
+                                        user.displayOneUser(tab.get(x));
+                                    } else
+                                        user.displayOneUser(tab.get(x));
+                                    break;
+                                case "3":
+                                    wyszukiwarka();
+                                    break;
+                            }
+                        }
                         break;
                     case "4":
                         zarzadzajKlientami();
@@ -226,10 +300,22 @@ public class Menu {
             } else {
                 switch (pick) {
                     case "1":
-                        plik.zapiszDoPliku(user.lista);
+                        System.out.println("\nUWAGA! Czy napewno chcesz nadpisać bazę danych? t/n");
+                        koniec = wpisz.nextLine();
+                        if (koniec.equals("t")) {
+                            plik.zapiszDoPliku(user.lista);
+                        } else {
+                            System.out.println("\nZapis został cofnięty");
+                        }
                         break;
                     case "2":
-                        plik.zapiszCSV(user.lista);
+                        System.out.println("\nUWAGA! Czy napewno chcesz nadpisać plik CSV? t/n");
+                        koniec = wpisz.nextLine();
+                        if (koniec.equals("t")) {
+                            plik.zapiszCSV(user.lista);
+                        } else {
+                            System.out.println("\nExport został cofnięty");
+                        }
                         break;
                     case "3":
                         plik.wczytajZPliku(user.lista);
