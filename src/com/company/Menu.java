@@ -606,7 +606,7 @@ public class Menu {
                     case "1":
                         x=0;
                         tab = search.wyszukajPoUsludze(orders.ordersList);
-                        user.displayOneUser(tab.get(x));
+                        orders.displayOneOrder(tab.get(x));
                         while (x < tab.size()){
                             System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
                             pick = wpisz.nextLine();
@@ -635,8 +635,8 @@ public class Menu {
                         break;
                     case "2":
                         x=0;
-                        tab = search.wyszukajPoNazwisku(user.lista);
-                        user.displayOneUser(tab.get(x));
+                        tab = search.wyszukajPoKwocie(orders.ordersList);
+                        orders.displayOneOrder(tab.get(x));
                         while (x < tab.size()){
                             System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
                             pick = wpisz.nextLine();
@@ -645,17 +645,17 @@ public class Menu {
                                     x++;
                                     if (x >= tab.size()){
                                         x=0;
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     } else
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     break;
                                 case "2":
                                     x--;
                                     if (x < 0){
                                         x=tab.size()-1;
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     } else
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     break;
                                 case "3":
                                     wyszukiwarkaZamowien();
