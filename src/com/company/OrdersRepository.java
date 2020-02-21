@@ -30,7 +30,11 @@ public class OrdersRepository {
         System.out.print("Podaj nazwę części:\t");
         tmp.setNazwaCzesci(wpisz.nextLine());
         while (!done){
-            System.out.print("Podaj kwotę w PLN z groszami oddzielone '.':\t");
+            System.out.print("Podaj kwotę w PLN z groszami oddzielone ',':\t");
+            while (!wpisz.hasNextDouble()){
+                System.out.println("Niepoprawne dane - podaj kwotę ponownie\n");
+                wpisz.next();
+            }
             sprawdzCyfry = wpisz.nextDouble();
             if (sprawdzCyfry > 0.0) {
                 tmp.setKwota1(sprawdzCyfry);
@@ -53,7 +57,7 @@ public class OrdersRepository {
         else
         {
             tmp+= "\nZamówienie nr: "+(element+1)+"\n";
-            tmp+= "Nazwa usługi\t\t\t\t"+ ordersList.get(element).getNazwaUslugi()+"\n";
+            tmp+= "Nazwa usługi\t\t\t"+ ordersList.get(element).getNazwaUslugi()+"\n";
             tmp+= "Nazwa części\t\t\t"+ ordersList.get(element).getNazwaCzesci()+"\n";
             tmp+= "Kwota\t\t\t\t\t"+ ordersList.get(element).getKwota1()+"\n";
         }
@@ -64,7 +68,7 @@ public class OrdersRepository {
         String tmp = "";
 
         tmp+= "\nZamówienie nr: "+(element+1)+"\n";
-        tmp+= "Nazwa usługi\t\t\t\t"+ ordersList.get(element).getNazwaUslugi()+"\n";
+        tmp+= "Nazwa usługi\t\t\t"+ ordersList.get(element).getNazwaUslugi()+"\n";
         tmp+= "Nazwa części\t\t\t"+ ordersList.get(element).getNazwaCzesci()+"\n";
         tmp+= "Kwota\t\t\t\t\t"+ ordersList.get(element).getKwota1()+"\n";
         System.out.println(tmp);
