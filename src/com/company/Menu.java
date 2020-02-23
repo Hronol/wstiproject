@@ -291,7 +291,7 @@ public class Menu {
 
     public void zapiszWczytaj(){
 
-        String menu = "1. Zapisz zmiany do pliku"
+        String menu = "1. Zapisz zmiany"
                 + "\n2. Exportuj plik do CSV"
                 + "\n3. Wczytaj z pliku"
                 + "\n4. Dodaj pusty plik"
@@ -306,13 +306,7 @@ public class Menu {
             } else {
                 switch (pick) {
                     case "1":
-                        System.out.println("\nUWAGA! Czy napewno chcesz nadpisać bazę danych? t/n");
-                        koniec = wpisz.nextLine();
-                        if (koniec.equals("t")) {
-                            plik.zapiszDoPliku(user.lista);
-                        } else {
-                            System.out.println("\nZapis został cofnięty");
-                        }
+                        zapiszZmianyMenu();
                         break;
                     case "2":
                         System.out.println("\nUWAGA! Czy napewno chcesz nadpisać plik CSV? t/n");
@@ -324,7 +318,7 @@ public class Menu {
                         }
                         break;
                     case "3":
-                        plik.wczytajZPliku(user.lista);
+                        wczytajZmianyMenu();
                         break;
                     case "4":
                         plik.tworzPlik();
@@ -341,7 +335,89 @@ public class Menu {
         } while (!flag);
     }
 
+    public void zapiszZmianyMenu(){
 
+        String menu = "1. Zapisz zmiany klientów"
+                + "\n2 Zapisz zmiany zamówień"
+                + "\n3. Zapisz wszystko"
+                + "\n4. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        System.out.println("\nUWAGA! Czy napewno chcesz nadpisać bazę danych? t/n");
+                        koniec = wpisz.nextLine();
+                        if (koniec.equals("t")) {
+                            plik.zapiszKlientow(user.lista);
+                        } else {
+                            System.out.println("\nZapis został cofnięty");
+                        }
+                        break;
+                    case "2":
+                        System.out.println("\nUWAGA! Czy napewno chcesz nadpisać plik CSV? t/n");
+                        koniec = wpisz.nextLine();
+                        if (koniec.equals("t")) {
+                            plik.zapiszZamowienia(orders.ordersList);
+                        } else {
+                            System.out.println("\nZapis został cofnięty");
+                        }
+                        break;
+                    case "3":
+                        plik.zapiszWszystko(user.lista, orders.ordersList);
+                        break;
+                    case "4":
+                        menuStart();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+
+                }
+            }
+        } while (!flag);
+    }
+
+    public void wczytajZmianyMenu(){
+
+        String menu = "1. Wczytaj klientów"
+                + "\n2 Wczytaj zamówienia"
+                + "\n3. Wczytaj wszystko"
+                + "\n4. Wróć"
+                + "\n\nWybierz operacje:";
+
+        do {
+            System.out.println(menu);
+            pick = wpisz.nextLine();
+            if (pick == "4") {
+                flag = true;
+            } else {
+                switch (pick) {
+                    case "1":
+                        plik.wczytajKlientow(user.lista);
+                        break;
+                    case "2":
+                        plik.wczytajZamowienia(orders.ordersList);
+                        break;
+                    case "3":
+                        plik.wczytajWszystko(user.lista, orders.ordersList);
+                        break;
+                    case "4":
+                        menuStart();
+                        break;
+                    default:
+                        System.out.println("Błąd wprowadzania danych. Spróbuj ponownie.");
+                        break;
+
+                }
+            }
+        } while (!flag);
+    }
 
     public void sortujListe() {
 
@@ -530,7 +606,7 @@ public class Menu {
                     case "1":
                         x=0;
                         tab = search.wyszukajPoUsludze(orders.ordersList);
-                        user.displayOneUser(tab.get(x));
+                        orders.displayOneOrder(tab.get(x));
                         while (x < tab.size()){
                             System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
                             pick = wpisz.nextLine();
@@ -559,8 +635,8 @@ public class Menu {
                         break;
                     case "2":
                         x=0;
-                        tab = search.wyszukajPoNazwisku(user.lista);
-                        user.displayOneUser(tab.get(x));
+                        tab = search.wyszukajPoKwocie(orders.ordersList);
+                        orders.displayOneOrder(tab.get(x));
                         while (x < tab.size()){
                             System.out.println("\n1. 1 do przodu\n2. 1 do tyłu\n3. Wróc");
                             pick = wpisz.nextLine();
@@ -569,20 +645,20 @@ public class Menu {
                                     x++;
                                     if (x >= tab.size()){
                                         x=0;
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     } else
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     break;
                                 case "2":
                                     x--;
                                     if (x < 0){
                                         x=tab.size()-1;
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     } else
-                                        user.displayOneUser(tab.get(x));
+                                        orders.displayOneOrder(tab.get(x));
                                     break;
                                 case "3":
-                                    wyszukiwarka();
+                                    wyszukiwarkaZamowien();
                                     break;
                             }
                         }
@@ -601,10 +677,10 @@ public class Menu {
 
     public void sortujListeZamowien() {
 
-        String menu = "1. Sortuj po imieniu ASC"
-                +"\n2. Sortuj po imieniu DSC"
-                +"\n3. Sortuj po peselu ASC"
-                +"\n4. Sortuj po peselu DSC"
+        String menu = "1. Sortuj po nazwie usługi ASC"
+                +"\n2. Sortuj po nazwie usługi DSC"
+                +"\n3. Sortuj po kwocie ASC"
+                +"\n4. Sortuj po kwocie DSC"
                 +"\n5. Wróć"
                 +"\n\nWybierz operacje:";
 

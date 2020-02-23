@@ -92,6 +92,7 @@ public class UserRepository {
     }
 
     public void edytujKlienta(int element){
+        done = false;
         wpisz = new Scanner(System.in);
         System.out.println("Edytuj imie:\t *enter pominie krok");
         set = wpisz.nextLine();
@@ -106,6 +107,9 @@ public class UserRepository {
         while (!done) {
             System.out.println("Edytuj nip:\t *enter pominie krok");
             sprawdzCyfry = wpisz.nextLine();
+            if (sprawdzCyfry.isEmpty()){
+                done = true;
+            }
             if (sprawdzCyfry.matches(szablonNIP)) {
                 lista.get(element).setNip(sprawdzCyfry);
                 done = true;
@@ -115,11 +119,15 @@ public class UserRepository {
         while (!done){
             System.out.println("Edytuj pesel:\t *enter pominie krok");
             sprawdzCyfry = wpisz.nextLine();
+            if (sprawdzCyfry.isEmpty()){
+                done = true;
+            }
             if (sprawdzCyfry.matches(szablonPesel)) {
                 lista.get(element).setPesel(sprawdzCyfry);
                 done = true;
             }
         }
+        done = false;
         System.out.println("Edytuj nazwę firmy:\t *enter pominie krok");
         set = wpisz.nextLine();
         if (!set.isEmpty()) {
